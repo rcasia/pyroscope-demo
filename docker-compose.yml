@@ -11,3 +11,11 @@ services:
       - 3000:3000
     environment:
       - "GF_FEATURE_TOGGLES_ENABLE=flameGraph"
+
+  demo-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - grafana
+      - pyroscope
