@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  pyroscope:
+    image: grafana/pyroscope:latest
+    ports:
+      - 4040:4040
+
+  grafana:
+    image: grafana/grafana:main
+    ports:
+      - 3000:3000
+    environment:
+      - "GF_FEATURE_TOGGLES_ENABLE=flameGraph"
